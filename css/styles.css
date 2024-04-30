@@ -159,7 +159,7 @@ a:hover, a:focus {
     padding-left: 2em;
 }
 
-.nav-collapse a:hover, .nav-collapse a:focus {
+.nav-collapse a:hover, .nav-collapse a:focus { /* Hover Effect On Mobile Nav Items */
     color: white;
     font-size: 27px;
 }
@@ -209,14 +209,14 @@ button { /* Home Page Button Styling */
     font-weight: bold;
 }
 
-button:hover, button:focus {
+button:hover, button:focus { /* Hover Effect On Buttons */
     background-color: #13294B;
     color: #7BAFD4;
     transform: translate3d(-5px, -5px, 0);
     box-shadow: 5px 5px #7BAFD4;
 }
 
-.video-container {
+.video-container { /* General Styling For Video Content Areas */
     margin: 0;
     background-color: #7BAFD4;
     flex: 310px;
@@ -247,7 +247,7 @@ footer { /* Footer Styling For All Pages */
     border-top: 2.5px solid #7BAFD4
 }
 
-#x-icon {
+#x-icon { /* Footer Icon's Size/Color */
     width: 40px;
     fill: #7BAFD4;
 }
@@ -486,7 +486,7 @@ a[href^="mailto"] {
     align-self: center;
 }
 
-.second-img {
+.second-img { /* Makes Only One Image Visible In Mobile View Of WWLF Page */
     display: none;
 }
 
