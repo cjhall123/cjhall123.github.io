@@ -1,0 +1,680 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    background-color: #F8F8F8;
+    font-family: "Merriweather", serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+header { /* Header Styling For All Pages */
+    margin:0;
+    width: 100%;
+    padding: 15px 0px;
+    background-color: #13294B;
+    border-bottom: 2.5px solid #7BAFD4;
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: 180px auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "logo toggle"
+    ". navitems";
+}
+
+img {
+    width: 100%;
+}
+
+#club-logo {
+    grid-area: logo;
+    margin-left: 25px;
+}
+
+.nav-collapse { /* Individual Nav Items */
+    grid-area: navitems;
+    justify-self: end;
+    font-size: 25px;
+    font-family: "Oswald", sans-serif;
+}
+
+a:active,
+a:hover, a:focus {
+    outline: 0;
+}
+
+@font-face {
+    font-family: "responsivenav";
+    src: url("../icons/responsivenav.eot");
+    src: url("../icons/responsivenav.eot?#iefix") format("embedded-opentype"),
+    url("../icons/responsivenav.ttf") format("truetype"),
+    url("../icons/responsivenav.woff") format("woff"),
+    url("../icons/responsivenav.svg#responsivenav") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.nav-toggle { /* Hamburger and X Icons for Mobile Navbar */
+    text-decoration: none;
+    text-indent: -300px;
+    position: relative;
+    overflow: hidden;
+    width: 100px;
+    height: 75px;
+    float: right;
+    grid-area: toggle;
+    justify-self: flex-end;
+}
+
+.nav-toggle:before {
+    color: #7BAFD4; /* edit this to change the icon color */
+    font: normal 55px/55px "responsivenav"; /* edit font-size (28px) to change the icon size */
+    text-transform: none;
+    text-align: center;
+    position: absolute;
+    content: "\2261"; /* hamburger icon */
+    text-indent: 0;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-top: 15px;
+}
+
+.nav-toggle.active:before {
+    font-size: 55px;
+    content: "\78"; /* X/close icon */
+}
+
+.nav-collapse ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.nav-collapse li {
+    display: block;
+}
+
+.js .nav-collapse {
+    clip: rect(0 0 0 0);
+    max-height: 0;
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.nav-collapse.opened {
+    max-height: 9999px;
+}
+
+.logo {
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 55px;
+    padding: 0 20px;
+    color: #7BAFD4;
+}
+
+.fixed {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.nav-collapse,
+.nav-collapse * {
+    box-sizing: border-box;
+}
+
+.nav-collapse,
+.nav-collapse ul {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.nav-collapse a {
+    text-decoration: none;
+    padding: 0.25em 1em;
+    color: #7BAFD4;
+    width: 100%;
+    display: block;
+}
+
+.nav-collapse ul ul a {
+    padding-left: 2em;
+}
+
+.nav-collapse a:hover, .nav-collapse a:focus {
+    color: white;
+    font-size: 27px;
+}
+
+main { /* General Styling For All Main Sections */
+    flex-grow: 1;
+    padding: 20px 12%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    color: #13294B;
+}
+
+.title { /* General Styling For All Page Titles */
+    margin: 0;
+    font-size: 2.6rem;
+    padding-bottom: 15px;
+    text-align: center;
+    border-bottom: 3px solid #13294B;
+    font-family: "Oswald", sans-serif;
+}
+
+.main-img, .main-img img { /* Makes All Images Slightly Rounded */
+    border-radius: 10px;
+}
+
+.main-text { /* General Styling For All Main Text Areas */
+    margin: 0;
+    padding: 20px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    border: 1px solid #13294B;
+    box-shadow: 12px 12px #7BAFD4;
+}
+
+button { /* Home Page Button Styling */
+    background-color: #7BAFD4;
+    color: #13294B;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.5s ease;
+    font-size: 1.5rem;
+    padding: 17px 45px;
+    border-radius: 25px;
+    border: none;
+    align-self: center;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: bold;
+}
+
+button:hover, button:focus {
+    background-color: #13294B;
+    color: #7BAFD4;
+    transform: translate3d(-5px, -5px, 0);
+    box-shadow: 5px 5px #7BAFD4;
+}
+
+.video-container {
+    margin: 0;
+    background-color: #7BAFD4;
+    flex: 310px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    color: #13294B;
+    font-size: 1.3rem;
+    font-family: "Oswald", sans-serif;
+}
+
+video {
+    width: 100%;
+    height: 90%;
+    align-self: end;
+    border-radius: 0 0 10px 10px;
+    background-color: black;
+}
+
+footer { /* Footer Styling For All Pages */
+    padding: 25px 0;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background-color: #13294B;
+    color: white;
+    font-size: 1.25rem;
+    border-top: 2.5px solid #7BAFD4
+}
+
+#x-icon {
+    width: 40px;
+    fill: #7BAFD4;
+}
+
+@media screen and (min-width: 1100px) { /* Styling For When Screen Is Too Wide For Hamburger Menu */
+header {
+    grid-template-columns: 200px auto;
+    grid-template-areas: 
+    "logo navitems";
+    padding: 0;
+}
+
+#club-logo {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.nav-collapse a:hover, .nav-collapse a:focus {
+    background-color: #7BAFD4;
+    color: #13294B;
+    font-size: 26px;
+}
+.nav-collapse ul {
+    flex-direction: row;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.nav-collapse li {
+    width: auto;
+    height: 100%;
+}
+
+.nav-collapse a {
+    text-align: center;
+    border-top: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+}
+
+.nav-collapse ul ul a {
+    display: none;
+}
+
+.nav-collapse.closed {
+    max-height: none;
+}
+.nav-toggle {
+    display: none;
+}
+}
+
+@media screen and (min-width: 1200px) { /* Styling For When The Home Page Goes From Mobile To Desktop */
+    #home-main {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "title title"
+        "image vid"
+        "text vid"
+        "apply learn";
+    }
+    
+    .title {
+        grid-area: title;
+    }
+    
+    .main-img {
+        grid-area: image;
+    }
+    
+    .main-text{
+        grid-area: text;
+    }
+    
+    #home-video {
+        grid-area: vid;
+    }
+    
+    #apply {
+        grid-area: apply;
+    }
+    
+    #learn-more {
+        grid-area: learn;
+    }
+}
+
+/* Contact Page Styling Starts Here */
+.contact-box{
+    background-color: #7BAFD4;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: transform 0.3s ease;
+}
+
+.contact-box h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.7rem;
+}
+
+.contact-box:hover, .contact-box:focus {
+    transform: scale(1.05, 1.05);
+}
+
+.contact-info {
+    background-color: white;
+    border-radius: 0px 0px 15px 15px;
+    width: 100%;
+    height: 80%;
+    justify-self: end;
+    color: black;
+    font-size: 1.1rem;
+}
+
+a[href^="mailto"] { 
+    color: black; 
+}
+
+#main-contact {
+    padding: 20px 20%;
+}
+
+#main-contact h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+@media screen and (min-width: 1175px) { /* Styling For When The Contact Page Goes From Mobile To Desktop */
+    #main-contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 0.75fr 4.5fr;
+        grid-template-areas:
+        "title title title"
+        "subheader subheader subheader"
+        "one two three";
+        padding: 20px 8%;
+    }
+
+    .title {
+        grid-area: title;
+    }
+
+    #main-contact h2 {
+        grid-area: subheader;
+    }
+
+    .one  {
+        grid-area: one;
+    }
+
+    .two  {
+        grid-area: two;
+    }
+
+    .three  {
+        grid-area: three;
+    }
+
+    .contact-info {
+        line-height: 70px;
+        font-size: 1.2rem;
+    }
+}
+
+/* What We Do Page Styling Starts Here */
+#main-wwd .main-img, #main-wwd .main-text {
+    font-size: 1.15rem;
+    max-width: 700px;
+    align-self: center;
+}
+
+@media screen and (min-width: 1250px) { /* Styling For When The What We Do Page Goes From Mobile To Desktop */
+    #main-wwd {
+        padding: 20px 7%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "title title"
+        "image text";
+        column-gap: 25px;
+    }
+
+    .title {
+        grid-area: title;
+    }
+
+    .main-img {
+        grid-area: image;
+        align-self: center;
+    }
+    
+    .main-text{
+        grid-area: text;
+    }
+}
+
+/* What We Look For Page Styling Starts Here */
+#wwlf-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.wwlf-text h2 {
+    background-color: #7BAFD4;
+    margin:0;
+    padding: 15px 0;
+    font-size: 1.5rem;
+    box-shadow: 3px 3px #13294B;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.wwlf-text p {
+    margin:0;
+    padding: 25px;
+    color: black;
+    font-size: 1.15rem;
+}
+
+#main-wwlf .main-img, #wwlf-box {
+    max-width: 800px;
+    align-self: center;
+}
+
+.second-img {
+    display: none;
+}
+
+@media screen and (min-width: 1380px) { /* Styling For When The What We Look For Page Goes From Mobile To Desktop */
+
+    #main-wwlf {
+        padding: 20px 6%;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "title title"
+        "second-img box"
+        "image box"
+        ;
+        column-gap: 20px;
+        row-gap: 25px;
+    }
+
+    .title {
+        grid-area: title;
+    }
+
+    .second-img {
+        display: inline;
+        grid-area: second-img;
+    }
+
+    #wwlf-box {
+        grid-area: box;
+        display: grid;
+        grid-template-columns: 1fr 1.25fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "first second"
+        "third fourth";
+        column-gap: 3px;
+    }
+
+    .first h2, .third h2 {
+        border-width: 1px 0.5px 1px 1px;
+    }
+
+    .second h2, .fourth h2 {
+        border-width: 1px 1px 1px 0.5px;
+    }
+}
+
+/* Apply Page Styling Starts Here */
+em {
+    color: black;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+#resource:link, #resource:visited {
+    color: black;
+    font-weight: bolder;
+}
+
+#main-apply .main-text {
+    font-size: 1.35rem;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#resources-box {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#resources-box h5 {
+    background-color: #7BAFD4;
+    box-shadow: 3px 3px #13294B;
+    margin:0;
+    padding: 20px;
+    font-size: 1.6rem;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+#resources-box p {
+    margin:0;
+    padding: 25px;
+    font-size: 1.24rem;
+}
+
+#main-apply .video-container h5{
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width: 1275px) { /* Styling For When The Apply Page Goes From Mobile To Desktop */
+    #main-apply {
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "title title"
+        "text resources"
+        "text vid";
+        row-gap: 35px;
+    }
+
+    .title {
+        grid-area: title;
+    }
+
+    #resources-box {
+        grid-area: resources;
+    }
+
+    #main-apply .main-text {
+        font-size: 1.5rem;
+        padding: 0px 35px;
+        line-height: 1.85;
+    }
+
+    #main-apply .video-container {
+        font-size: 1.8rem;
+    }
+}
+
+/* Resume Page Styling Starts Here */
+.resume-text {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.resume-text h2 {
+    background-color: #7BAFD4;
+    margin:0;
+    padding: 15px 0;
+    font-size: 1.5rem;
+    box-shadow: 3px 3px #13294B;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+#main-resume ul {
+    text-align: left;
+    line-height: 2;
+}
+
+#main-resume ul h5 {
+    font-size: 1.2rem;
+    padding: 5px;
+    margin: 0;
+}
+
+.resume-text h4 {
+    margin:0;
+    padding: 25px;
+    color: black;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #13294B;
+}
+
+#main-resume .second-img {
+    display: inline;
+}
+
+
+@media screen and (min-width: 1100px) { /* Styling For When The Resume Page Goes From Mobile To Desktop */
+    #main-resume {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "title title"
+        "image resume"
+        "second-img resume-two";
+    }
+
+    .title {
+        grid-area: title;
+    }
+
+    .main-img {
+        grid-area: image;
+        align-self: center;
+    }
+
+    #resume-one {
+        grid-area: resume;
+    }
+
+    #resume-two {
+        grid-area: resume-two;
+    }
+
+    .second-img {
+        grid-area: second-img;
+        align-self: center;
+    }
+}
