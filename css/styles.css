@@ -135,8 +135,7 @@ a:hover, a:focus {
     top: 0;
 }
 
-.nav-collapse,
-.nav-collapse * {
+.nav-collapse, .nav-collapse * {
     box-sizing: border-box;
 }
 
@@ -255,7 +254,9 @@ footer { /* Footer Styling For All Pages */
 
 @media screen and (min-width: 1100px) { /* Styling For When Screen Is Too Wide For Hamburger Menu */
 header {
+    height: 140px;
     grid-template-columns: 200px auto;
+    grid-template-rows: 140px;
     grid-template-areas: 
     "logo navitems";
     padding: 0;
@@ -298,6 +299,7 @@ header {
 
 .nav-collapse.closed {
     max-height: none;
+    height: 100%;
 }
 .nav-toggle {
     display: none;
