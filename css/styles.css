@@ -219,7 +219,7 @@ button:hover, button:focus { /* Hover Effect On Buttons */
 .video-container { /* General Styling For Video Content Areas */
     margin: 0;
     background-color: #7BAFD4;
-    flex: 260px;
+    flex: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
