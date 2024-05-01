@@ -231,7 +231,7 @@ button:hover, button:focus { /* Hover Effect On Buttons */
 
 video {
     width: 100%;
-    min-height: 85%;
+    flex: 270px;
     border-radius: 0 0 10px 10px;
     background-color: black;
 }
@@ -252,7 +252,7 @@ footer { /* Footer Styling For All Pages */
     fill: #7BAFD4;
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 450px) {
 html, body {
     font-size: 16px;
 }
@@ -268,12 +268,12 @@ footer {
     font-size: 24px;
 }
 
-.nav-collapse a:hover, .nav-collapse a:focus { /* Hover Effect On Mobile Nav Items */
+.nav-collapse a:hover, .nav-collapse a:focus {
     font-size: 27px;
 }
 
 .nav-toggle:before {
-    font: normal 55px/55px "responsivenav"; /* edit font-size to change the icon size */
+    font: normal 55px/55px "responsivenav";
 }
 
 .nav-toggle.active:before {
