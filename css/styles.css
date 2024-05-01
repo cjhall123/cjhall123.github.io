@@ -231,7 +231,7 @@ button:hover, button:focus { /* Hover Effect On Buttons */
 
 video {
     width: 100%;
-    height: 90%;
+    min-height: 85%;
     border-radius: 0 0 10px 10px;
     background-color: black;
 }
