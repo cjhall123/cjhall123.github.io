@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 10px;
+    font-size: 14px;
     background-color: #F8F8F8;
     font-family: "Merriweather", serif;
 }
@@ -161,7 +161,7 @@ a:hover, a:focus {
 
 .nav-collapse a:hover, .nav-collapse a:focus { /* Hover Effect On Mobile Nav Items */
     color: white;
-    font-size: 27px;
+    font-size: 21.5px;
 }
 
 main { /* General Styling For All Main Sections */
@@ -254,7 +254,7 @@ footer { /* Footer Styling For All Pages */
 
 @media screen and (min-width: 400px) {
 html, body {
-    font-size: 12px;
+    font-size: 16px;
 }
 footer {
     font-size: 1.1rem;
@@ -266,7 +266,7 @@ footer {
 
 .nav-collapse a:hover, .nav-collapse a:focus { /* Hover Effect On Mobile Nav Items */
     
-    font-size: 22px;
+    font-size: 27px;
 }
 }
 
